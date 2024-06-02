@@ -1,0 +1,668 @@
+:root {
+  --color-primary: #df7e4d;
+  --color-primary-light: #e69b75;
+  --color-text: #dee2e6;
+  --color-text-dark: #ffffff;
+  --color-background-100: #003870;
+  --color-background-500: #082848;
+  --color-background-900: #0c2034;
+  --color-red: #d00000;
+  --color-red-dark: #7a0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  color: var(--color-text);
+  background-color: var(--color-background-900);
+  padding: 2.4rem;
+}
+
+/* ******* */
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 7.2rem;
+  padding: 0 3.2rem;
+  background-color: var(--color-primary);
+  border-radius: 0.9rem;
+}
+
+.main {
+  margin-top: 2.4rem;
+  height: calc(100vh - 7.2rem - 3 * 2.4rem);
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+}
+
+.box {
+  width: 42rem;
+  max-width: 42rem;
+  background-color: var(--color-background-500);
+  border-radius: 0.9rem;
+  overflow: auto;
+  position: relative;
+}
+
+.loader {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 4.8rem;
+}
+
+.error {
+  text-align: center;
+  font-size: 2rem;
+  padding: 4.8rem;
+}
+
+/* ******* */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* .logo span {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+} */
+
+.logo span img {
+  width: 70px; /* Adjust the size as needed */
+  height: auto;
+  /* margin-right: 10px; Space between image and text */
+}
+
+.logo h1 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #060236;
+}
+
+.search {
+  justify-self: center;
+  border: none;
+  padding: 1.1rem 1.6rem;
+  font-size: 1.8rem;
+  border-radius: 0.7rem;
+  width: 40rem;
+  transition: all 0.3s;
+  color: var(--color-text);
+
+  /* background-color: var(--color-background-900); */
+  background-color: var(--color-primary-light);
+}
+
+.search::placeholder {
+  color: var(--color-text-dark);
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
+  transform: translateY(2px);
+}
+
+.num-results {
+  justify-self: end;
+  font-size: 1.8rem;
+}
+
+.btn-toggle {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  height: 2.4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-background-900);
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.list {
+  list-style: none;
+  padding: 0.8rem 0;
+  overflow: auto;
+}
+
+.list-watched {
+  height: calc(100% - 9rem);
+}
+
+.list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 2.4rem;
+  font-size: 1.6rem;
+  align-items: center;
+
+  padding: 1.6rem 3.2rem;
+  border-bottom: 1px solid var(--color-background-100);
+}
+
+.list.list-movies li {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.list.list-movies li:hover {
+  background-color: var(--color-background-100);
+}
+
+.list img {
+  width: 100%;
+  grid-row: 1 / -1;
+}
+
+.list h3 {
+  font-size: 1.8rem;
+}
+
+.list div {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.list p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-delete {
+  position: absolute;
+  right: 2.4rem;
+
+  height: 1.8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-red);
+  color: var(--color-background-900);
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-delete:hover {
+  background-color: var(--color-red-dark);
+}
+
+/* ******* */
+
+.summary {
+  padding: 2.2rem 3.2rem 1.8rem 3.2rem;
+  border-radius: 0.9rem;
+  background-color: var(--color-background-100);
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+}
+
+.summary h2 {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.summary div {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.summary p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* ******* */
+
+.details {
+  line-height: 1.4;
+  font-size: 1.4rem;
+}
+
+.details header {
+  display: flex;
+}
+
+.details section {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.details img {
+  width: 33%;
+}
+
+.details-overview {
+  width: 100%;
+  padding: 2.4rem 3rem;
+  background-color: var(--color-background-100);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.details-overview h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.1;
+}
+
+.details-overview p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.rating {
+  background-color: var(--color-background-100);
+  border-radius: 0.9rem;
+  padding: 2rem 2.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.btn-add {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 10rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-add:hover {
+  background-color: var(--color-primary-light);
+}
+
+.seconds {
+  background-color: var(--color-background-100);
+  width: 8rem;
+  border-radius: 10rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.4rem;
+  margin-top: 2.4rem;
+}
+
+.btn-back {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  height: 3.2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  /* background-color: var(--color-text); */
+  background-color: #fff;
+  color: var(--color-background-500);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  font-family: sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
+*/
+
+/* Base styles for small devices like mobile phones */
+@media only screen and (max-width: 576px) {
+  .nav-bar {
+    grid-template-columns: 1fr;
+    padding: 0 1.6rem;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .num-results {
+    font-size: 1.4rem;
+  }
+
+  .main {
+    flex-direction: column;
+    margin-top: 1.2rem;
+    height: auto;
+    gap: 1.2rem;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn-toggle {
+    top: 0.4rem;
+    right: 0.4rem;
+    height: 2rem;
+  }
+
+  .list li {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .list h3 {
+    font-size: 1.6rem;
+  }
+
+  .list div,
+  .list p {
+    font-size: 1.4rem;
+    gap: 1.2rem;
+  }
+
+  .btn-delete {
+    right: 1.2rem;
+    height: 1.6rem;
+  }
+
+  .summary {
+    padding: 1.6rem 2rem;
+  }
+
+  .summary h2 {
+    font-size: 1.4rem;
+  }
+
+  .summary div,
+  .summary p {
+    font-size: 1.4rem;
+  }
+
+  .details header,
+  .details section {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .details img {
+    width: 100%;
+  }
+
+  .details-overview {
+    padding: 1.6rem 2rem;
+  }
+
+  .details-overview h2 {
+    font-size: 2rem;
+  }
+
+  .details-overview p {
+    font-size: 1.4rem;
+  }
+
+  .rating {
+    padding: 1.6rem 2rem;
+  }
+
+  .btn-add {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .seconds {
+    width: 6rem;
+    font-size: 1.2rem;
+  }
+
+  .btn-back {
+    top: 0.4rem;
+    left: 0.4rem;
+    height: 2.4rem;
+    font-size: 2rem;
+  }
+}
+
+/* Styles for tablets and larger devices */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  .nav-bar {
+    grid-template-columns: 1fr 2fr;
+    padding: 0 2rem;
+  }
+
+  .search {
+    width: 30rem;
+    font-size: 1.6rem;
+  }
+
+  .main {
+    flex-direction: row;
+    margin-top: 2rem;
+    height: calc(100vh - 8rem - 3 * 2rem);
+  }
+
+  .box {
+    width: 35rem;
+  }
+
+  .list li {
+    padding: 1.6rem 2rem;
+  }
+
+  .list h3 {
+    font-size: 1.6rem;
+  }
+
+  .list div,
+  .list p {
+    font-size: 1.6rem;
+    gap: 1.6rem;
+  }
+
+  .btn-delete {
+    right: 2rem;
+  }
+
+  .summary {
+    padding: 2rem 2.4rem;
+  }
+
+  .summary h2 {
+    font-size: 1.6rem;
+  }
+
+  .summary div,
+  .summary p {
+    font-size: 1.6rem;
+  }
+
+  .details header,
+  .details section {
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+  .details img {
+    width: 50%;
+  }
+
+  .details-overview {
+    padding: 2rem 2.4rem;
+  }
+
+  .details-overview h2 {
+    font-size: 2.2rem;
+  }
+
+  .details-overview p {
+    font-size: 1.6rem;
+  }
+
+  .rating {
+    padding: 1.8rem 2.2rem;
+  }
+
+  .btn-add {
+    font-size: 1.3rem;
+    padding: 0.9rem;
+  }
+
+  .seconds {
+    width: 7rem;
+    font-size: 1.3rem;
+  }
+
+  .btn-back {
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 2.8rem;
+    font-size: 2.2rem;
+  }
+}
+
+/* Styles for larger desktops and monitors */
+@media only screen and (min-width: 993px) {
+  .nav-bar {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 3.2rem;
+  }
+
+  .search {
+    width: 40rem;
+  }
+
+  .main {
+    flex-direction: row;
+    margin-top: 2.4rem;
+    height: calc(100vh - 7.2rem - 3 * 2.4rem);
+  }
+
+  .box {
+    width: 42rem;
+  }
+
+  .list li {
+    padding: 1.6rem 3.2rem;
+  }
+
+  .list h3 {
+    font-size: 1.8rem;
+  }
+
+  .list div,
+  .list p {
+    font-size: 1.6rem;
+    gap: 2.4rem;
+  }
+
+  .btn-delete {
+    right: 2.4rem;
+  }
+
+  .summary {
+    padding: 2.2rem 3.2rem;
+  }
+
+  .summary h2 {
+    font-size: 1.6rem;
+  }
+
+  .summary div,
+  .summary p {
+    font-size: 1.6rem;
+  }
+
+  .details header,
+  .details section {
+    flex-direction: row;
+    padding: 4rem;
+  }
+
+  .details img {
+    width: 33%;
+  }
+
+  .details-overview {
+    padding: 2.4rem 3rem;
+  }
+
+  .details-overview h2 {
+    font-size: 2.4rem;
+  }
+
+  .details-overview p {
+    font-size: 1.6rem;
+  }
+
+  .rating {
+    padding: 2rem 2.4rem;
+  }
+
+  .btn-add {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .seconds {
+    width: 8rem;
+    font-size: 1.4rem;
+  }
+
+  .btn-back {
+    top: 0.6rem;
+    left: 0.6rem;
+    height: 3.2rem;
+    font-size: 2.4rem;
+  }
+}
