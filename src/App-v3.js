@@ -384,7 +384,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       document.title = `Movie | ${title}`;
 
       return function () {
-        document.title = "movieHub";
+        document.title = "moviehub";
         // console.log(`Clean up effect for movie ${title}`);
       };
     },
