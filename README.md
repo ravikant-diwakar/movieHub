@@ -4,4 +4,4 @@ Movie Discovery React-based web app for movie exploration with dynamic real-time
 
 | Link |
 |-------|
-| moviehub-react.vercel.app/ |
+| [moviehub-react.vercel.app/](https://moviehub-react.vercel.app/) |
