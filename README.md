@@ -1,3 +1,6 @@
+![movieHub](https://github.com/ravikant-diwakar/movieHub/assets/110620635/0c1f7ff5-7a3a-4a19-9a30-1a2450a1c7b8)
+
+
 # MovieHub
 
 MovieHub is a React application that allows users to search for movies, view movie details, rate movies, add them to a watched list, remove movies from the watched list, and view statistics about their watched movies.
@@ -5,11 +8,6 @@ MovieHub is a React application that allows users to search for movies, view mov
 | Link |
 |-------|
 | [moviehub-react.vercel.app/](https://moviehub-react.vercel.app/) |
-
-|-------|
-| Link || [moviehub-react.vercel.app/](https://moviehub-react.vercel.app/) |
-|-------|
-
 
 ## Features
 
