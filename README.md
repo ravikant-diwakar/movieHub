@@ -6,7 +6,9 @@ MovieHub is a React application that allows users to search for movies, view mov
 |-------|
 | [moviehub-react.vercel.app/](https://moviehub-react.vercel.app/) |
 
+|-------|
 | Link || [moviehub-react.vercel.app/](https://moviehub-react.vercel.app/) |
+|-------|
 
 
 ## Features
