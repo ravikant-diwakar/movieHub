@@ -1,5 +1,6 @@
 
-<img src="![movieHub](https://github.com/ravikant-diwakar/movieHub/assets/110620635/0c1f7ff5-7a3a-4a19-9a30-1a2450a1c7b8)" alt="MovieHub Logo" width="150" height="150">
+<img src="![movieHub](https://github.com/ravikant-diwakar/movieHub/assets/110620635/0ee6332b-1a89-4f55-ae3f-3da4a6ec6a7a)"
+ alt="MovieHub Logo" width="150" height="150">
 
 # MovieHub
 
