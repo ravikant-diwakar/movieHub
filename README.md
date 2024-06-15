@@ -20,7 +20,7 @@ MovieHub is a React application that allows users to search for movies, view mov
 
 1. Clone this repository to your local host.
     ```bash
-    git clone https://github.com/your-username/movieHub.git
+    git clone https://github.com/ravikant-diwakar/movieHub
     ```
 2. Install dependencies using npm or yarn.
     ```bash
