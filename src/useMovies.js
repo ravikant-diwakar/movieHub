@@ -17,9 +17,10 @@ export function useMovies(query) {
         try {
           setIsLoading(true);
           setError("");
+          const encodedQuery = encodeURIComponent(query);
 
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+            `http://www.omdbapi.com/?apikey=${KEY}&s=${encodedQuery}`,
             { signal: controller.signal }
           );
 
